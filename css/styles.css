@@ -124,3 +124,11 @@ body {
         grid-template-columns: 220px 1fr 260px;
     }
 }
+
+/* Kuva sivupalkissa */
+.side-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
