@@ -1,0 +1,126 @@
+/* || Tehtävässä käytin apuna tekoälyä hieroessani ulkonäköä mieleisekseni. */
+
+/* Perustyyli – mobile-first */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff0f7; 
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    gap: 20px;
+    padding: 20px;
+}
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    background: linear-gradient(135deg, #ff4fa3, #ff82c4);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 79, 163, 0.35);
+}
+
+/* NAV */
+
+.nav {
+    grid-area: nav;
+    background-color: #ffb3d9;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 79, 163, 0.25);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav a {
+    color: #4a0030;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #ff007f;
+}
+
+/* MAIN */
+
+.main {
+    grid-area: main;
+}
+
+/* ASIDE */
+
+.aside {
+    grid-area: aside;
+    background-color: #ffe0ef;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 79, 163, 0.25);
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    background-color: #ff4fa3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 79, 163, 0.25);
+}
+
+/* KORTTIRUUDUKKO */
+
+.cards {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin-top: 15px;
+}
+
+.card {
+    background: linear-gradient(135deg, #ffe6f2, #ffffff);
+    padding: 20px;
+    border-radius: 14px;
+    border-left: 6px solid #ff4fa3;
+    box-shadow: 0 4px 12px rgba(255, 79, 163, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(255, 79, 163, 0.35);
+}
+
+/* MEDIA QUERY – leveämpi näkymä */
+
+@media (min-width: 900px) {
+    .container {
+        grid-template-areas:
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+        grid-template-columns: 220px 1fr 260px;
+    }
+}
